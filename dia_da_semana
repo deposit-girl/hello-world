@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int calculoDia(int dianasc, int mesnasc, int anonasc)
+{
+  int dia_sem;
+
+  dia_sem=(dianasc+(((mesnasc+1)*13)/5)+(anonasc%100)+((anonasc%100)/4)+(anonasc/400)+(5*(anonasc/100)))%7;
+
+  return dia_sem;
+}
+
+int main()
+{
+  int dianasc,mesnasc,anonasc;
+  int dia_sem;
+
+  printf("Insira o dia, o mês e o ano em que você nasceu.\n");
+  scanf("%d%d%d",&dianasc,&mesnasc,&anonasc);
+
+  dia_sem=calculoDia(dianasc,mesnasc,anonasc);
+
+  if(dia_sem==0){
+    printf("Sábado\n");
+  }
+  else if(dia_sem==1){
+    printf("Domingo\n");
+  }
+  else if(dia_sem==2){
+    printf("Segunda-feira\n");
+  }
+  else if(dia_sem==3){
+    printf("Terça-feira\n");
+  }
+  else if(dia_sem==4){
+    printf("Quarta-feira\n");
+  }
+  else if(dia_sem==5){
+    printf("Quinta-feira\n");
+  }
+  else if(dia_sem==6){
+    printf("Sexta-feira\n");
+  }
+
+  return 0;
+}
